@@ -13,7 +13,7 @@
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #0f1419; --fg: #e6edf3; --muted: #9da7b3; --line: #30363d;
-      --accent: #5aa2f0; --accent-soft: #13263b; --card: #161b22;
+      --accent: #5aa2f0; --accent-soft: #13263b; --card: #161b22; --on-accent: #0f1419;
     }
   }
   * { box-sizing: border-box; }
@@ -31,7 +31,7 @@
   .hero h1 { font-size: 44px; line-height: 1.15; margin: 0 0 16px; max-width: 760px; }
   .hero p { font-size: 20px; color: var(--muted); max-width: 700px; margin: 0 0 28px; }
   .btn {
-    display: inline-block; background: var(--accent); color: #fff; text-decoration: none;
+    display: inline-block; background: var(--accent); color: var(--on-accent, #fff); text-decoration: none;
     padding: 12px 22px; border-radius: 8px; font-weight: 600;
   }
   .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); margin-left: 10px; }
