@@ -8,12 +8,12 @@
 <style>
   :root {
     --bg: #ffffff; --fg: #1b1f24; --muted: #57606a; --line: #d8dee4;
-    --accent: #0b5cad; --accent-soft: #e8f1fb; --card: #f6f8fa;
+    --accent: #0b5cad; --accent-soft: #e8f1fb; --card: #f6f8fa; --track: #d3e3f5;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #0f1419; --fg: #e6edf3; --muted: #9da7b3; --line: #30363d;
-      --accent: #5aa2f0; --accent-soft: #13263b; --card: #161b22; --on-accent: #0f1419;
+      --accent: #5aa2f0; --accent-soft: #13263b; --card: #161b22; --on-accent: #0f1419; --track: #22364d;
     }
   }
   * { box-sizing: border-box; }
@@ -46,6 +46,29 @@
   .note { background: var(--accent-soft); border-radius: 10px; padding: 20px 24px; }
   .note p { margin: 0 0 10px; } .note p:last-child { margin: 0; }
   .apps { color: var(--muted); }
+  .bench-title { font-size: 20px; margin: 28px 0 4px; }
+  .bench-sub, .bench-note { color: var(--muted); font-size: 15px; margin: 0 0 16px; }
+  .bench-note { margin: 16px 0 0; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+  .kpi { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+  .kpi-label { font-size: 14px; color: var(--muted); min-height: 2.6em; }
+  .kpi-value { font-size: 30px; font-weight: 600; line-height: 1.2; margin: 6px 0 10px; }
+  .kpi-value .arrow { color: var(--muted); font-weight: 400; }
+  .kpi-n { font-size: 13px; color: var(--muted); margin-top: 8px; }
+  .meter { height: 8px; border-radius: 4px; background: var(--track); overflow: hidden; }
+  .meter span { display: block; height: 100%; border-radius: 4px; background: var(--accent); }
+  .spark { width: 100%; height: 70px; display: block; }
+  .spark .grid { stroke: var(--line); stroke-width: 1; }
+  .spark polyline { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+  .spark circle { fill: var(--accent); stroke: var(--card); stroke-width: 2; }
+  .spark .hit rect { fill: transparent; cursor: default; }
+  .spark-axis { display: flex; justify-content: space-between; margin-top: 2px; }
+  .bench-table { margin-top: 14px; font-size: 15px; }
+  .bench-table summary { cursor: pointer; color: var(--accent); }
+  .bench-table table { border-collapse: collapse; margin-top: 10px; width: 100%; max-width: 640px; }
+  .bench-table th, .bench-table td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--line); }
+  .bench-table td:nth-child(2), .bench-table th:nth-child(2) { text-align: right; }
+  .bench-table td:nth-child(n+2) { white-space: nowrap; }
   footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
   footer a { color: var(--muted); }
   @media (max-width: 640px) {
@@ -132,11 +155,92 @@
   <section id="status">
     <div class="wrap">
       <h2>Where it is today</h2>
-      <div class="note">
-        <p>E.L.I is a Windows beta. In our own testing, about 4 in 5 live desktop actions succeed, and tasks
-          it has been shown once are replayed reliably. It is dependable for short tasks you supervise; long
-          multi-step jobs in complex enterprise apps are still improving.</p>
-        <p>We are looking for a <strong>pilot partners</strong>: any individual, team or business willing to
+      <p>E.L.I is a Windows beta. It is dependable for short tasks you supervise; long multi-step jobs in
+        complex apps are still improving.</p>
+
+      <h3 class="bench-title">Benchmarks</h3>
+      <p class="bench-sub">Live runs on a real Windows desktop, 23 September to 6 November 2026.</p>
+
+      <div class="kpis">
+        <div class="kpi">
+          <div class="kpi-label">Live desktop actions completed</div>
+          <div class="kpi-value">80%</div>
+          <div class="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80"
+               aria-label="Live desktop actions completed: 80%"><span style="width:80%"></span></div>
+          <div class="kpi-n">385 of 484 runs</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Tasks replayed after one demonstration</div>
+          <div class="kpi-value">98%</div>
+          <div class="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="98"
+               aria-label="Tasks replayed after one demonstration: 98%"><span style="width:98%"></span></div>
+          <div class="kpi-n">44 of 45 runs</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Built-in app skills</div>
+          <div class="kpi-value">84%</div>
+          <div class="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="84"
+               aria-label="Built-in app skills: 84%"><span style="width:84%"></span></div>
+          <div class="kpi-n">162 of 192 runs</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Multi-step jobs completed</div>
+          <div class="kpi-value">76%</div>
+          <div class="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="76"
+               aria-label="Multi-step jobs completed: 76%"><span style="width:76%"></span></div>
+          <div class="kpi-n">35 of 46 jobs</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Jobs independently verified as done</div>
+          <div class="kpi-value">67%</div>
+          <div class="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="67"
+               aria-label="Jobs independently verified as done: 67%"><span style="width:67%"></span></div>
+          <div class="kpi-n">32 of 48 jobs</div>
+        </div>
+        <div class="kpi trend">
+          <div class="kpi-label">Live success rate over time</div>
+          <div class="kpi-value">63% <span class="arrow">→</span> 90%</div>
+          <svg class="spark" viewBox="0 0 240 70" role="img"
+               aria-label="Live success rate: late September 63%, early October 76%, late October 86%, November 90%">
+            <line class="grid" x1="8" y1="62" x2="232" y2="62"/>
+            <polyline points="12,28.0 85.3,21.0 158.7,15.6 232,13.4"/>
+            <circle cx="12" cy="28.0" r="4"/><circle cx="85.3" cy="21.0" r="4"/>
+            <circle cx="158.7" cy="15.6" r="4"/><circle class="now" cx="232" cy="13.4" r="4"/>
+            <g class="hit">
+              <rect x="0" y="0" width="48" height="70"><title>Late Sep: 63% (33 of 52)</title></rect>
+              <rect x="48" y="0" width="74" height="70"><title>Early Oct: 76% (155 of 204)</title></rect>
+              <rect x="122" y="0" width="74" height="70"><title>Late Oct: 86% (188 of 218)</title></rect>
+              <rect x="196" y="0" width="44" height="70"><title>Nov: 90% (9 of 10)</title></rect>
+            </g>
+          </svg>
+          <div class="kpi-n spark-axis"><span>Late Sep</span><span>Nov</span></div>
+        </div>
+      </div>
+
+      <details class="bench-table">
+        <summary>Show as a table</summary>
+        <table>
+          <thead><tr><th>Measure</th><th>Result</th><th>Runs</th></tr></thead>
+          <tbody>
+            <tr><td>Live desktop actions completed</td><td>80%</td><td>385 of 484</td></tr>
+            <tr><td>Tasks replayed after one demonstration</td><td>98%</td><td>44 of 45</td></tr>
+            <tr><td>Built-in app skills</td><td>84%</td><td>162 of 192</td></tr>
+            <tr><td>Multi-step jobs completed</td><td>76%</td><td>35 of 46</td></tr>
+            <tr><td>Jobs independently verified as done</td><td>67%</td><td>32 of 48</td></tr>
+            <tr><td>Live success rate, late September</td><td>63%</td><td>33 of 52</td></tr>
+            <tr><td>Live success rate, early October</td><td>76%</td><td>155 of 204</td></tr>
+            <tr><td>Live success rate, late October</td><td>86%</td><td>188 of 218</td></tr>
+            <tr><td>Live success rate, November (so far)</td><td>90%</td><td>9 of 10</td></tr>
+          </tbody>
+        </table>
+      </details>
+
+      <p class="bench-note">How these were measured: from E.L.I's own run logs on one development PC without a
+        graphics card, scored by E.L.I's built-in checks. They are not yet independent results. The November
+        figure covers only 10 runs. Independent measurement against human-checked results is part of the pilot.</p>
+
+      <div class="note" style="margin-top:24px">
+        <p>We are looking for <strong>pilot partners</strong>: any individual, team or business willing to
           run a 90-day supervised pilot on one recurring weekly job.</p>
       </div>
     </div>
