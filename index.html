@@ -41,6 +41,7 @@
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
   .card h3 { margin: 0 0 8px; font-size: 18px; }
   .card p { margin: 0; color: var(--muted); font-size: 16px; }
+  .card ul.plain { color: var(--muted); font-size: 16px; }
   ul.plain { padding-left: 20px; margin: 0; }
   ul.plain li { margin: 6px 0; }
   .note { background: var(--accent-soft); border-radius: 10px; padding: 20px 24px; }
@@ -247,6 +248,65 @@
         <p>We are looking for <strong>pilot partners</strong>: any individual, team or business willing to
           run a 90-day supervised pilot on one recurring weekly job.</p>
       </div>
+    </div>
+  </section>
+
+  <section id="assessment">
+    <div class="wrap">
+      <h2>Our own assessment, November 2026</h2>
+      <p>We keep a written capabilities assessment of E.L.I and update it as the product changes. This is a
+        summary of the 12 November 2026 edition, which covers runs up to 9 November. Its verdict: E.L.I is a
+        capable assistant for supervised work, and it is <strong>not yet a coworker you can leave
+        unsupervised</strong>.</p>
+
+      <div class="kpis">
+        <div class="kpi">
+          <div class="kpi-label">Live desktop runs completed since 4 October</div>
+          <div class="kpi-value">83%</div>
+          <div class="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="83"
+               aria-label="Live desktop runs completed since 4 October: 83%"><span style="width:83%"></span></div>
+          <div class="kpi-n">409 of 495 runs</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Runs with a verified result, 2 to 9 November</div>
+          <div class="kpi-value">71%</div>
+          <div class="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="71"
+               aria-label="Runs with a verified result, 2 to 9 November: 71%"><span style="width:71%"></span></div>
+          <div class="kpi-n">72 of 102 runs, up from 46% the week before</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Benchmark checks confirmed by separate verifiers</div>
+          <div class="kpi-value">24 of 35</div>
+          <div class="meter" role="meter" aria-valuemin="0" aria-valuemax="35" aria-valuenow="24"
+               aria-label="Benchmark checks confirmed: 24 of 35"><span style="width:68.6%"></span></div>
+          <div class="kpi-n">8 November study; the verifiers never read E.L.I's own reply</div>
+        </div>
+      </div>
+
+      <div class="grid" style="margin-top:16px">
+        <div class="card"><h3>What it found strong</h3>
+          <ul class="plain">
+            <li>A wide range of real desktop work, including applications E.L.I was never trained on</li>
+            <li>Controls built in from the start: approvals, a stop button and a tamper-evident log</li>
+            <li>Jobs keep running when the chat window is closed, and an interrupted job resumes from its
+              last verified step</li>
+            <li>Useful offline, from a built-in library of 1.5 million articles</li>
+          </ul></div>
+        <div class="card"><h3>What is still open</h3>
+          <ul class="plain">
+            <li>Half of all live runs (291 of 583) carry a verified result; the others rely on E.L.I's own report</li>
+            <li>The separate verifiers caught three false "done" claims. All three are fixed, and they still
+              count against a "reliable" rating</li>
+            <li>The latest week, mostly benchmark test jobs, completed 75% (76 of 102)</li>
+            <li>Open-ended requests that E.L.I must plan from scratch succeed about half the time (47%)</li>
+            <li>Without a graphics card, each step that reads the screen takes 38 to 68 seconds</li>
+            <li>No real business job has yet been defined, baselined and evaluated</li>
+          </ul></div>
+      </div>
+
+      <p class="bench-note">The assessment was prepared for Influence IPM LLC from E.L.I's source code and run
+        logs on one development PC. It is not a third-party audit. Clients and pilot partners can ask us for
+        the full report.</p>
     </div>
   </section>
 
