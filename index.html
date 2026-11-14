@@ -91,6 +91,7 @@
       <a href="#what">What it does</a>
       <a href="#control">Control</a>
       <a href="#status">Status</a>
+      <a href="#jobs">New</a>
       <a href="#prototype">In development</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -314,6 +315,62 @@
       <p class="bench-note">The assessment was prepared for Influence IPM LLC from E.L.I's source code and run
         logs on one development PC. It is not a third-party audit. Clients and pilot partners can ask us for
         the full report.</p>
+    </div>
+  </section>
+
+  <section id="jobs">
+    <div class="wrap">
+      <h2>New in November: hand off a whole job</h2>
+      <p>The assessment above says E.L.I is not yet a coworker you can leave unsupervised. Handed-off jobs are
+        our first step at closing that gap. You type <strong>/job</strong> and a goal, such as "build the
+        monthly sales sheet and write the memo", and E.L.I plans the job, does it and checks it while you do
+        something else. The feature was added on 13 November 2026 and is at an early stage.</p>
+      <div class="grid">
+        <div class="card"><h3>Plans on your PC</h3>
+          <p>The plan is written by an AI model running locally. The job is never sent to a cloud service
+            for planning.</p></div>
+        <div class="card"><h3>Checks every step it can</h3>
+          <p>After each step E.L.I reads the result back: the cell, the file, the text. A step it could not
+            check is labelled as unchecked in the report.</p></div>
+        <div class="card"><h3>Stops and asks, never guesses</h3>
+          <p>A step that needs you, such as a sign-in code or a repeated irreversible action, is set aside
+            for you. The other parts of the job carry on.</p></div>
+        <div class="card"><h3>Picks up where it left off</h3>
+          <p>After a restart or a crash, the job resumes from its last checked step. If you start using the
+            PC, the job pauses and continues once the PC is idle.</p></div>
+        <div class="card"><h3>Tells you how it ended</h3>
+          <p>Each job ends as done, partly done or failed, with a record of every step. You can pause,
+            resume or cancel a job at any time.</p></div>
+      </div>
+
+      <h3 class="bench-title">First live runs</h3>
+      <p class="bench-sub">13 November 2026, on one development PC.</p>
+      <div class="kpis">
+        <div class="kpi">
+          <div class="kpi-label">Test jobs finished and passed separate checks</div>
+          <div class="kpi-value">3 of 3</div>
+          <div class="meter" role="meter" aria-valuemin="0" aria-valuemax="3" aria-valuenow="3"
+               aria-label="Test jobs passed: 3 of 3"><span style="width:100%"></span></div>
+          <div class="kpi-n">File notes, a spreadsheet (8.7 minutes) and a memo (3.1 minutes)</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Recovery when the background worker was stopped mid-job</div>
+          <div class="kpi-value">2 seconds</div>
+          <div class="kpi-n">The step was sent again and the job finished 6 of 6 steps</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Job with one part forced to fail</div>
+          <div class="kpi-value">Set aside</div>
+          <div class="kpi-n">The failed part was set aside and the independent part finished</div>
+        </div>
+      </div>
+
+      <p class="bench-note">What is not done yet: these are a handful of single runs, so there is no success
+        rate. The full set of eight test jobs has not been run. The live jobs were submitted through a test
+        folder, not typed into the chat, so the /job command itself has not been run end to end. One fix,
+        which stops a failed step being replaced by an unrelated action, has passed its automated tests and
+        has not been repeated live. Planning is slow without a graphics card, at one to three minutes per
+        stage, and results sent by e-mail are untested.</p>
     </div>
   </section>
 
