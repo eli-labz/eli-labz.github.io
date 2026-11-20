@@ -91,6 +91,7 @@
       <a href="#what">What it does</a>
       <a href="#control">Control</a>
       <a href="#status">Status</a>
+      <a href="#progress">Progress</a>
       <a href="#jobs">New</a>
       <a href="#prototype">In development</a>
       <a href="#contact">Contact</a>
@@ -315,6 +316,77 @@
       <p class="bench-note">The assessment was prepared for Influence IPM LLC from E.L.I's source code and run
         logs on one development PC. It is not a third-party audit. Clients and pilot partners can ask us for
         the full report.</p>
+    </div>
+  </section>
+
+  <section id="progress">
+    <div class="wrap">
+      <h2>Closing the gaps: progress to 20 November</h2>
+      <p>The assessment named five gaps between E.L.I and a coworker you can leave unsupervised. From 18 to
+        20 November we built tools for all five and tested them live on our development PC. <strong>None of
+        the five is closed yet.</strong> Four of them can only be closed by people, hardware or time, not by
+        more code.</p>
+
+      <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(380px, 100%), 1fr))">
+        <div class="card"><h3>"Done" now means checked</h3>
+          <p>E.L.I reports a job as done only when something other than E.L.I's own judgement confirmed it:
+            the application's screen, the application's data or a read-back of the result. Anything else is
+            reported as "not confirmed".</p></div>
+        <div class="card"><h3>Asks or declines up front</h3>
+          <p>Before a job starts, E.L.I asks for any missing detail, such as a date, a name or a value. It
+            declines kinds of jobs it keeps failing, instead of stopping partway through. When an application
+            refuses a change, E.L.I stops and tells you. It no longer tries to work around the refusal.</p></div>
+        <div class="card"><h3>Every schedule change seen on screen</h3>
+          <p>In an enterprise project-scheduling application, E.L.I now confirms each change on the
+            application's own screen. This covers activities, dates, progress, logic links, resources, roles,
+            rates, calendars, codes, custom fields, notes, documents, steps, expenses and baselines. Names must
+            match letter for letter.</p></div>
+        <div class="card"><h3>Menus mapped in advance</h3>
+          <p>Menu and ribbon commands in two scheduling applications are mapped ahead of time. They now run in
+            8 to 9 seconds without the slow screen-reading step. Before, they took 30 seconds to several minutes.</p></div>
+      </div>
+
+      <h3 class="bench-title">Live results since 18 November</h3>
+      <p class="bench-sub">Live jobs on one development PC, 18 to 20 November 2026.</p>
+      <div class="kpis">
+        <div class="kpi">
+          <div class="kpi-label">Jobs done and independently verified</div>
+          <div class="kpi-value">80%</div>
+          <div class="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80"
+               aria-label="Jobs done and independently verified: 80%"><span style="width:80%"></span></div>
+          <div class="kpi-n">301 of 377 jobs; 66% in the assessment period</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Reported honestly as "not confirmed"</div>
+          <div class="kpi-value">36</div>
+          <div class="kpi-n">Steps were done, but nothing outside E.L.I confirmed the result</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Not completed, or waiting for the user's answer</div>
+          <div class="kpi-value">40</div>
+          <div class="kpi-n">34 not completed, 6 waiting for an answer</div>
+        </div>
+      </div>
+
+      <details class="bench-table" open>
+        <summary>Where each gap stands</summary>
+        <table>
+          <thead><tr><th>Gap</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Reliability on long jobs (target: well over 95%)</td><td>Improved, not closed</td></tr>
+            <tr><td>Speed of reading unfamiliar screens</td><td>Partly worked around</td></tr>
+            <tr><td>Evidence beyond one PC and one user</td><td>Not closed</td></tr>
+            <tr><td>Sign-off and a four-week trial on a first real job</td><td>Not closed</td></tr>
+            <tr><td>Stricter settings for shared and customer PCs</td><td>Ready, not yet used</td></tr>
+          </tbody>
+        </table>
+      </details>
+
+      <p class="bench-note">What is not done yet: most of these jobs were tests in one scheduling application
+        on one test project, so they are not a fair sample of everyday work. No results have yet been labelled
+        by people (the target is 100). The first real job has not been signed off, and its four-week trial has
+        not started. Without a graphics card, any unfamiliar screen still takes 38 to 68 seconds per look. All
+        figures come from one user on one PC.</p>
     </div>
   </section>
 
