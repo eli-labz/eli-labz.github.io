@@ -328,7 +328,7 @@
 
   <section id="progress">
     <div class="wrap">
-      <h2>Closing the gaps: progress to 20 November</h2>
+      <h2>Closing the gaps: progress to 22 November</h2>
       <p>The assessment named five gaps between E.L.I and a coworker you can leave unsupervised. From 18 to
         20 November we built tools for all five and tested them live on our development PC. <strong>None of
         the five is closed yet.</strong> Four of them can only be closed by people, hardware or time, not by
@@ -351,6 +351,21 @@
         <div class="card"><h3>Menus mapped in advance</h3>
           <p>Menu and ribbon commands in two scheduling applications are mapped ahead of time. They now run in
             8 to 9 seconds without the slow screen-reading step. Before, they took 30 seconds to several minutes.</p></div>
+      </div>
+
+      <h3 class="bench-title">Added 21 to 22 November</h3>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(380px, 100%), 1fr))">
+        <div class="card"><h3>Repairs its own connection</h3>
+          <p>When the part of E.L.I that works the mouse and keyboard stops answering, E.L.I now works out why
+            and fixes it. Before, it waited 90 seconds and gave up. In the first live case, a second copy of
+            E.L.I on the same PC had taken over the connection. E.L.I found this, started its own connection
+            in 2 seconds and then ran the job. It remembers which fix worked, so it tries that fix first next
+            time.</p></div>
+        <div class="card"><h3>Tells you when it is working</h3>
+          <p>While E.L.I is using your mouse and keyboard, the chat shows that it is working, how long it has
+            been working, and the step it is on right now. When the job ends, the chat says it has let go of
+            the mouse and keyboard. Suggestions wait until the job is finished. In a live test the timer
+            followed a 31-second job from start to end.</p></div>
       </div>
 
       <h3 class="bench-title">Live results since 18 November</h3>
