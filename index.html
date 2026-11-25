@@ -432,8 +432,14 @@
             for up to 17 seconds. The window no longer waits for that start-up, and if the whole app ever
             pauses, E.L.I now records what caused it. In a test, a request sent mid-start-up came back at once.
             The fix takes effect the next time E.L.I starts.</p>
-          <p>Each start now also checks these protections and reports any recent pauses. Lesson proving, the
-            training and the trained model can each be switched off for a single launch.</p></div>
+          <p>Our development launcher now also checks itself each time E.L.I starts: that lesson proving and
+            the training are in place, which trained version of the screen-reading model is in use, that the
+            chat fix is built, and that the settings keeping the app responsive are still there, putting them
+            back if not. It then reports any recent pauses and what caused them. Its first check on our PC
+            found 7 short window freezes in the previous day, the longest 5.8 seconds.</p>
+          <p>Lesson proving, the training, the trained model and this check can each be switched off for a
+            single launch. These checks are on our development set-up and not yet in the installed
+            product.</p></div>
       </div>
 
       <h3 class="bench-title">Live results since 18 November</h3>
