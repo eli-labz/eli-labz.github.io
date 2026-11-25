@@ -343,7 +343,7 @@
 
   <section id="progress">
     <div class="wrap">
-      <h2>Closing the gaps: progress to 23 November</h2>
+      <h2>Closing the gaps: progress to 24 November</h2>
       <p>The assessment named five gaps between E.L.I and a coworker you can leave unsupervised. From 18 to
         20 November we built tools for all five and tested them live on our development PC. <strong>None of
         the five is closed yet.</strong> Four of them can only be closed by people, hardware or time, not by
@@ -400,6 +400,26 @@
           <p>Voice Mode uses an outside speech service to hear and speak, so it is off until you switch it on.
             If that service refuses to work, for example because of a billing problem, E.L.I now tells you
             the reason before it opens the microphone. We have not yet run a full spoken job with it live.</p></div>
+      </div>
+
+      <h3 class="bench-title">Added 24 November</h3>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(380px, 100%), 1fr))">
+        <div class="card"><h3>Proves a lesson before keeping it</h3>
+          <p>You can teach E.L.I a task by doing it while it watches. Now, before it keeps the lesson, E.L.I
+            does the task itself on your screen while you watch, and checks that every click opens the same
+            thing yours did. Only a lesson it has done correctly itself goes into its long-term memory. If the
+            try fails, E.L.I tells you why and keeps the lesson aside instead. Lessons on the taskbar and the
+            Start menu can now be taught too.</p></div>
+        <div class="card"><h3>Trains on its own checked work</h3>
+          <p>Each click from a lesson E.L.I has proven, or later repeated and checked, now also trains its own
+            screen-reading model. The training runs on your PC, in the background, at the lowest priority;
+            nothing is sent to an AI service. New training is put into use only if it beats the current
+            version on the saved screens, and only if it still finds every other button the original model
+            found.</p>
+          <p>In the first live round, the original model found the Start button on 0 of 3 saved screens. The
+            trained version found it on all 3 and still found 5 of 5 other buttons it had not trained on.
+            That round taught it one task, so it is not yet better across the board. It gets better as you
+            teach it more.</p></div>
       </div>
 
       <h3 class="bench-title">Live results since 18 November</h3>
