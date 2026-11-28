@@ -293,9 +293,12 @@
       <p>On 27 November we re-scored the readiness score, from 59 to 62. One of its nine areas moved:
         independent checking of results, from 3 to 4 out of 5. E.L.I's screen-reading agent can no longer mark
         its own work as checked, and the share of live jobs done and independently verified rose from 50% to
-        74%. The other eight areas are unchanged. There is still no signed-off business job, the
-        screen-reading steps are still slow without a graphics card, and the trained model has not yet been
-        used on a live task.</p>
+        74%. The other eight areas are unchanged. There is still no signed-off business job, and the
+        screen-reading steps are still slow without a graphics card.</p>
+      <p>Since then (27 and 28 November) we tightened safety, recovered an earlier failure through learning,
+        and used the trained model on a live task for the first time; it did not get that task right. These
+        are described below under "Added 27 to 28 November". We have not re-scored yet, so the score stays
+        at 62.</p>
 
       <div class="kpis" style="grid-template-columns:repeat(auto-fit, minmax(200px, 1fr))">
         <div class="kpi">
@@ -307,10 +310,10 @@
         </div>
         <div class="kpi">
           <div class="kpi-label">Live desktop runs completed since 4 October</div>
-          <div class="kpi-value">83%</div>
-          <div class="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="83"
-               aria-label="Live desktop runs completed since 4 October: 83%"><span style="width:83%"></span></div>
-          <div class="kpi-n">440 of 532 runs</div>
+          <div class="kpi-value">84%</div>
+          <div class="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="84"
+               aria-label="Live desktop runs completed since 4 October: 84%"><span style="width:84%"></span></div>
+          <div class="kpi-n">880 of 1,042 runs, latest count</div>
         </div>
         <div class="kpi">
           <div class="kpi-label">Runs with a verified result, 2 to 10 November</div>
@@ -357,7 +360,7 @@
 
   <section id="progress">
     <div class="wrap">
-      <h2>Closing the gaps: progress to 27 November</h2>
+      <h2>Closing the gaps: progress to 28 November</h2>
       <p>The assessment named five gaps between E.L.I and a coworker you can leave unsupervised. From 18 to
         20 November we built tools for all five and tested them live on our development PC. <strong>None of
         the five is closed yet.</strong> Four of them can only be closed by people, hardware or time, not by
@@ -482,6 +485,48 @@
             simpler and smaller than a human brain, and it is not alive or aware.</p>
           <p>E.L.I's research can now run experiments on smaller copies of it, for example switching off part
             of it and measuring the effect. No study has used it yet.</p></div>
+      </div>
+
+      <h3 class="bench-title">Added 27 to 28 November</h3>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit, minmax(min(380px, 100%), 1fr))">
+        <div class="card"><h3>Safer by default</h3>
+          <p>If E.L.I's safety scan of a request fails, E.L.I now asks a person before acting. Before, it went
+            ahead. Sending email needs your approval. A typed request to send, delete, pay or submit gets one
+            confirmation first, even at E.L.I's higher autonomy levels. Background jobs can no longer skip
+            approval, and E.L.I's self-improvement proposes changes but never applies them by itself: a
+            person promotes them. The phone link is off until you turn it on.</p></div>
+        <div class="card"><h3>Learns from its own failures</h3>
+          <p>On 24 November E.L.I was asked to open the Start menu. Its screen-reading agent said it had done
+            so without clicking anything. The result check caught this, and the job was reported as failed.
+            We then showed E.L.I once, and it repeated the task itself before keeping the lesson. On
+            27 November the same request opened the Start menu in 3 seconds, and Windows confirmed it.</p>
+          <p>E.L.I also spent about 15 minutes at a time, on seven attempts, trying to open an application that
+            is not installed on the PC. It now notices this after two failures by checking every place an
+            installed program shows up, and answers "not on this PC" in under 2 seconds. It checks again each
+            time, so installing the program clears it.</p></div>
+        <div class="card"><h3>The trained model, used live</h3>
+          <p>The screen-reading model we trained on E.L.I's own checked work was used on a live task for the
+            first time on 27 November. E.L.I now records which version of the model each run used. <strong>It
+            did not get the task right</strong>: it pointed at the wrong part of the screen, the safety check
+            refused the click, and E.L.I reported the job as not done. On the same screen the trained and
+            original models both missed. The training so far came from three near-identical screens, and it
+            needs many more checked examples before it helps.</p></div>
+        <div class="card"><h3>Nothing left running after you close it</h3>
+          <p>Closing E.L.I is meant to stop everything it started. On 27 November three research and
+            simulation programs kept running afterwards, and one restarted a large model the shutdown had
+            just stopped. The shutdown now recognises every part of E.L.I, checks a second time, and leaves
+            other software such as databases alone. Those programs also refuse to start while E.L.I is
+            closed.</p></div>
+        <div class="card"><h3>Faster to give up when stuck</h3>
+          <p>The screen-reading agent now stops after repeating the same action five times. A simple "open"
+            request it has to search for gets 6 steps instead of 30. This cuts runs that used to take about
+            15 minutes. The individual steps are still slow without a graphics card.</p></div>
+        <div class="card"><h3>Ready for a real business job, once people sign</h3>
+          <p>The first business job, a weekly review of a portfolio's exceptions, has a written specification
+            and a step-by-step sign-off pack. What is left needs people: a manager's signature, four Mondays
+            of side-by-side comparison with the manual review, and 100 results checked by hand. If signed by
+            30 November, the earliest result would be on 21 December. <strong>Nothing has been signed or
+            started.</strong></p></div>
       </div>
 
       <h3 class="bench-title">Live results since 18 November</h3>
