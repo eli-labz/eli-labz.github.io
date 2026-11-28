@@ -282,7 +282,7 @@
         summary of the full assessment of 12 November 2026, which covers runs up to 10 November. Its verdict: E.L.I is a
         capable assistant for supervised work, and it is <strong>not yet a coworker you can leave
         unsupervised</strong>.</p>
-      <p>The latest edition is dated <strong>24 November 2026</strong>. Since the full assessment it has added
+      <p>The latest edition is dated <strong>28 November 2026</strong> and carries the re-scores below. Since the full assessment it has added
         dated updates on our progress to 24 November (shown below under "Closing the gaps"). The latest update
         covers lessons E.L.I now proves on screen before keeping them, the training of its screen-reading model
         on its own checked work, and a chat window that no longer freezes while E.L.I starts up. By the
@@ -304,14 +304,21 @@
         unchanged. Reliability, speed and the signed-off business job still stand between E.L.I and 80. The
         trained model was used live for the first time and did not get its task right, so it earned no
         points. These changes are described below under "Added 27 to 28 November".</p>
+      <p>Later on 28 November we re-scored once more, from 67 to 70. Two areas moved. Maintainability went
+        from 3 to 4: we worked through every failing automated test (one was a real fault, now fixed; the rest
+        were tests left behind by changes we had made on purpose), and the tests now pass on every change.
+        Auditability went from 4 to 5: E.L.I now checks its audit records against each other when it starts and
+        every hour while it is open, and tells you if one of them stops recording. We credited it only after
+        seeing that check run inside E.L.I itself. The other seven areas are unchanged. Reliability, speed and
+        the signed-off business job are the 10 points still between E.L.I and 80.</p>
 
       <div class="kpis" style="grid-template-columns:repeat(auto-fit, minmax(200px, 1fr))">
         <div class="kpi">
           <div class="kpi-label">Readiness score as a reliable coworker</div>
-          <div class="kpi-value">67 of 100</div>
-          <div class="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="67"
-               aria-label="Readiness score: 67 of 100"><span style="width:67%"></span></div>
-          <div class="kpi-n">Re-scored 28 November, up from 62 (27 November) and 59; 49 at the first assessment on 13 October</div>
+          <div class="kpi-value">70 of 100</div>
+          <div class="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70"
+               aria-label="Readiness score: 70 of 100"><span style="width:70%"></span></div>
+          <div class="kpi-n">Re-scored 28 November, up from 67 earlier that day, 62 (27 November) and 59; 49 at the first assessment on 13 October</div>
         </div>
         <div class="kpi">
           <div class="kpi-label">Live desktop runs completed since 4 October</div>
